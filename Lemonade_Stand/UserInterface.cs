@@ -29,7 +29,7 @@ namespace Lemonade_Stand
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Player player = new Player();
-            Console.WriteLine($"\n{player.Name}, you ready to play?? Well here we go...");
+            Console.WriteLine($"\nAlright {player.Name1}...here we go...");
             Console.ResetColor();
             Console.WriteLine("You've got 7 days to see if you can make buid a successful Lemonade stand." +
                 "\nYou'll need to figure out the best recipe for good Lemonade" +
@@ -41,7 +41,5 @@ namespace Lemonade_Stand
 
             Console.Clear();
         }
-
-
     }//class
 }//namespace

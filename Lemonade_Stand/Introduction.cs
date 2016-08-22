@@ -12,18 +12,6 @@ namespace Lemonade_Stand
         {
 
         }
-        public void ShowIntro()
-        {
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("WELCOME to LEMONADE STAND");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("\nYou have 7 days to try and make a profit." +
-                "\nYou will need to determine your recipe, buy your ingredients, at set your selling price to do this." +
-                "\nYou should also watch the weather forecasts.  The weather could affect your sales." +
-                "\nGood Luck!!");
-            Console.ResetColor();
-        }
+        
     }//class
 }//namespace

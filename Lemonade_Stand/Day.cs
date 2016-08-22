@@ -19,7 +19,7 @@ namespace Lemonade_Stand
         public void DecideToPlay()
         {
 
-            Console.WriteLine($"Are you ready to play Lemonade Stand, {player.Name}?");
+            Console.WriteLine($"Are you ready to play Lemonade Stand, {player.Name1}?");
             Console.WriteLine();
             Console.WriteLine("Y for yes");
             Console.WriteLine("N for no");
@@ -29,7 +29,8 @@ namespace Lemonade_Stand
             switch (choice)
             {
                 case "Y":
-                    Console.WriteLine("Great.");
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("GREAT!!!  Press enter:  ");
                     game.StartGame();
                     Console.Clear();
 

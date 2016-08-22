@@ -10,33 +10,46 @@ namespace Lemonade_Stand
     public class Customer
     {
         public int hereTheyCome;
+        //public string yesOrNo;
+        public double price;
+        //public double money;
+        //public double moneySpent;
+        //public double profit;
+        ////public int choiceLemons;
+        ////public int choiceIce;
+        ////public int choiceCups;
+        ////public int choiceSugar;
+        Inventory inventory = new Inventory();
+        Weather weather = new Weather();
+        List<int> customerBuysLemonade = new List<int>();
+        List<int> customerDoesntBuyLemonade = new List<int>();
 
         public Customer()//constructor
         {
 
         }
-        public int EnterCustomer()
+        public int SeeCustomerEnter()
         {
-            Random announce = new Random();
+            Random randomC = new Random();
             Thread.Sleep(5);
-            int randomAnnounce = announce.Next(0, 50);
-            if (randomAnnounce >= 0 && randomAnnounce <= 10)
+            int randomCustomer = randomC.Next(0, 50);
+            if (randomCustomer >= 0 && randomCustomer <= 10)
             {
                 hereTheyCome = 1;
             }
-            else if (randomAnnounce >= 11 && randomAnnounce <= 20)
+            else if (randomCustomer >= 11 && randomCustomer <= 20)
             {
                 hereTheyCome = 2;
             }
-            else if (randomAnnounce >= 21 && randomAnnounce <= 30)
+            else if (randomCustomer >= 21 && randomCustomer <= 30)
             {
                 hereTheyCome = 3;
             }
-            else if (randomAnnounce >= 31 && randomAnnounce <= 40)
+            else if (randomCustomer >= 31 && randomCustomer <= 40)
             {
                 hereTheyCome = 4;
             }
-            else if (randomAnnounce >= 41 && randomAnnounce <= 50)
+            else if (randomCustomer >= 41 && randomCustomer <= 50)
             {
                 hereTheyCome = 5;
             }
@@ -44,33 +57,33 @@ namespace Lemonade_Stand
             return hereTheyCome;
         }
 
-        public void AnnounceCustomersEntering()
+        public void AnnounceCustomersComing()
         {
             switch (hereTheyCome)
             {
                 case 1:
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("Here they come.  Let's see how you did....");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Ready or not, here they come...");
                     Console.ResetColor();
                     break;
                 case 2:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Ready or not, the customers are coming...");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("The customers are coming...");
                     Console.ResetColor();
                     break;
                 case 3:
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine("Here come some customers.  Let's see if they like your lemonade...");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("");
                     Console.ResetColor();
                     break;
                 case 4:
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    Console.WriteLine("Let's sell some Lemonade...");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Get the Lemonade in the cups...");
                     Console.ResetColor();
                     break;
                 case 5:
-                    Console.ForegroundColor = ConsoleColor.DarkGray;
-                    Console.WriteLine("Are you ready.  Get Set.  Sell...");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Time to open the store...");
                     Console.ResetColor();
                     break;
                 default:

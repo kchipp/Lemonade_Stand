@@ -8,13 +8,13 @@ namespace Lemonade_Stand
 {
     class Game
     {
-        public int numberOfDays = 7;
+        public int numberOfDays = 2;
         public string choice;
         Store store = new Store();
         Customer customer = new Customer();
         UserInterface ui = new UserInterface();
         Weather weather = new Weather();
-
+        
 
         public Game()//constructor
         {
@@ -45,13 +45,14 @@ namespace Lemonade_Stand
                     store.BuyCups();
                     store.BuySugar();
                     store.ShowMoneySpent();
-                    store.ShowWeather();
+                    //store.ShowWeather();
                     store.DisplayInventory();
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("Customers will be coming soon...");
-                    store.setPrice();
+                    store.SetPrice();
                     store.SetWillBuyPrice();
-                    Console.Clear();
+                    Console.WriteLine();
+                    customer.AnnounceCustomersComing();
                     store.ShowApproachingCustomers();
                     store.ShowPurchased();
                     store.ShowDidNotPurchase();
@@ -69,25 +70,22 @@ namespace Lemonade_Stand
         }
         public void EndGame()
         {
+            Console.Clear();
+            Console.WriteLine();
             Console.WriteLine("The game has ended.  Would you like to try again?  Y/N");
             choice = Console.ReadLine().ToLower();
-            bool correct = true;
-            while (correct)
             {
                 switch (choice)
                 {
 
                     case ("y"):
-                        Player player = new Player();
-                        Console.WriteLine($"Hello Again, {player.Name}");
                         StartGame();
                         break;
                     case ("n"):
                         Console.WriteLine("Thanks for playing...");
-                        Console.ReadKey();
+                        Console.Read();
                         break;
                     default:
-                        correct = false;
                         Console.WriteLine("Please try again");
                         EndGame();
                         break;

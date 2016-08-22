@@ -23,9 +23,9 @@ namespace Lemonade_Stand
         }
         public int DetermineWeather()
         {
-            Random weatherRand = new Random();
+            Random randomW = new Random();
             Thread.Sleep(5);
-            int randomWeather = weatherRand.Next(0, 50);
+            int randomWeather = randomW.Next(0, 50);
             if (randomWeather >= 0 && randomWeather <= 10)
             {
                 weatherNumber = 1;
@@ -50,7 +50,7 @@ namespace Lemonade_Stand
             return weatherNumber;
         }
 
-        public void PresentDailyWeather()
+        public void StateForecasat()
         {
             switch (weatherNumber)
             {
@@ -118,10 +118,11 @@ namespace Lemonade_Stand
         public int DetermineWillBuyWeather()
         {
             customerApproaching.Clear();
-            Random custApproach = new Random();
+            Random randomA = new Random();
+            Thread.Sleep(5);
             foreach (int buyingCust in dailyCustomers)
             {
-                int weatherBuy = custApproach.Next(0, 100);
+                int weatherBuy = randomA.Next(0, 100);
                 if (weatherNumber == 1)
                 {
                     if (weatherBuy < 90)
@@ -195,27 +196,27 @@ namespace Lemonade_Stand
         public void GetNumberOfPotentialCustomers()
         {
             dailyCustomers.Clear();
-            Random custNum = new Random();
+            Random randomN = new Random();
             Thread.Sleep(5);
             if (weatherNumber == 1)
             {
-                potentialCustomer = custNum.Next(50, 70);
+                potentialCustomer = randomN.Next(50, 70);
             }
             else if (weatherNumber == 2)
             {
-                potentialCustomer = custNum.Next(40, 50);
+                potentialCustomer = randomN.Next(40, 50);
             }
             else if (weatherNumber == 3)
             {
-                potentialCustomer = custNum.Next(20, 30);
+                potentialCustomer = randomN.Next(20, 40);
             }
             else if (weatherNumber == 4)
             {
-                potentialCustomer = custNum.Next(30, 40);
+                potentialCustomer = randomN.Next(30, 40);
             }
             else if (weatherNumber == 5)
             {
-                potentialCustomer = custNum.Next(20, 25);
+                potentialCustomer = randomN.Next(20, 30);
             }
 
             for (int customers = 1; customers <= potentialCustomer; customers++)

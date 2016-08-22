@@ -181,7 +181,7 @@ namespace Lemonade_Stand
                 if (choiceSugar + inventory.sugar < inventory.lemons * 2 && choiceSugar + inventory.sugar < inventory.ice * 2 && choiceSugar + inventory.sugar < inventory.cups * 2)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Remember you need two servings of Sugar for every cup. Would you like to try again?");
+                    Console.Write("Will that be enough?  Would you like to try again?  ");
                     Console.ResetColor();
                     string choice = Console.ReadLine();
                     switch (choice)
@@ -193,7 +193,7 @@ namespace Lemonade_Stand
                     }
                 }
             }
-            catch (FormatException)
+            catch
             {
                 Console.WriteLine("Please enter a positive whole number, or zero");
                 return BuySugar();
@@ -234,21 +234,28 @@ namespace Lemonade_Stand
 
         }
 
-        public double setPrice()
+        public double SetPrice()
         {
-            Console.WriteLine("Please enter how much you would like to charge per cup for the day. \nFor example, 50 cents per cup would be entered as .50");
-            price = double.Parse(Console.ReadLine());
-            if (price <= 0.009)
+            try
             {
-                Console.WriteLine("You're Trying to make a profit, right?");
-                setPrice();
+                Console.WriteLine("Please enter how much you would like to charge per cup for the day. \nFor example, 50 cents per cup would be entered as .50");
+                price = double.Parse(Console.ReadLine());
+                if (price <= 0.009)
+                {
+                    Console.WriteLine("You're Trying to make a profit, right?");
+                    SetPrice();
+                }
+                else if (price >= 2.00)
+                {
+                    Console.WriteLine("Are you sure your lemonade is worth that?");
+                    SetPrice();
+                }
             }
-            else if (price >= 2.00)
+            catch (FormatException)
             {
-                Console.WriteLine("Are you sure your lemonade is worth that?");
-                setPrice();
+                Console.WriteLine("Please try again");
+                return SetPrice();
             }
-
             return price;
         }
         public void SetWillBuyPrice()
@@ -481,7 +488,7 @@ namespace Lemonade_Stand
             inventory.ShowCash();
             inventory.ShowInventory();
             weather.DetermineWeather();
-            weather.PresentDailyWeather();
+            weather.StateForecasat();
             weather.GetNumberOfPotentialCustomers();
             weather.DetermineWillBuyWeather();
 
