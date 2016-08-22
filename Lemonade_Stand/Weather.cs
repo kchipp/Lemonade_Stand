@@ -177,8 +177,9 @@ namespace Lemonade_Stand
 
                 if (weatherNumber == 5)
                 {
-                    if (weatherBuy < 10)
+                    if (weatherBuy < 15)
                     {
+
                         willApproach = true;
                         customerApproaching.Add(1);
                     }

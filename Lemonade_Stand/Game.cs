@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Lemonade_Stand
@@ -44,6 +45,7 @@ namespace Lemonade_Stand
                     store.BuyIce();
                     store.BuyCups();
                     store.BuySugar();
+                    Thread.Sleep(5);
                     store.ShowMoneySpent();                   
                     store.DisplayInventory();
                     Console.Clear();
@@ -71,7 +73,7 @@ namespace Lemonade_Stand
         {
             Console.Clear();
             Console.WriteLine();
-            Console.WriteLine($"The game has ended.  Your final profit is : {store.profit:C2}. \nWould you like to play for another week?  Y/N");
+            Console.WriteLine($"The week is over.  Your final profit is : {store.profit:C2}. \nWould you like to play for another week?  Y/N");
             choice = Console.ReadLine().ToLower();
             {
                 switch (choice)

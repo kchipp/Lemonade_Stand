@@ -128,7 +128,7 @@ namespace Lemonade_Stand
         public double BuyIce()
         {
             Console.WriteLine($"You currently have {inventory.ice} Cups of Ice.");
-            Console.Write("How many Cups of Ice would you like to buy? Cups cost 5 cents each.\nIce to Buy:  ");
+            Console.Write("How many Cups of Ice would you like to buy? Ice cost 5 cents per cup.\nIce to Buy:  ");
             try
             {
                 choiceIce = int.Parse(Console.ReadLine());
@@ -446,7 +446,7 @@ namespace Lemonade_Stand
             }
             else
             {
-                Console.WriteLine($"{customerDoesntBuyLemonade.Count()} people didn't buy Lemonade because the price was too high");
+                Console.WriteLine($"{customerDoesntBuyLemonade.Count()} people didn't buy Lemonade because the price was too high or you didn't have enough Lemonade.");
             }
 
         }
