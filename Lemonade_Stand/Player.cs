@@ -8,5 +8,18 @@ namespace Lemonade_Stand
 {
     class Player
     {
-    }
-}
+        public string Name;
+
+        public Player()//constructor
+        {
+            Name = GetUserInfo();
+        }
+        public string GetUserInfo()
+        {
+
+            Console.Write("\nWhat's your name?   ");
+            Name = Console.ReadLine();
+            return Name;
+        }
+    }//class
+}//namespace
