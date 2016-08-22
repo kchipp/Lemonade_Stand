@@ -24,7 +24,7 @@ namespace Lemonade_Stand
         public int DetermineWeather()
         {
             Random randomW = new Random();
-            Thread.Sleep(5);
+            Thread.Sleep(10);
             int randomWeather = randomW.Next(0, 50);
             if (randomWeather >= 0 && randomWeather <= 10)
             {

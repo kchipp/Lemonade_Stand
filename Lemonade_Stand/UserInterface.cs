@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     class UserInterface
     {
-
+        Player player = new Player();
         public UserInterface()//constructor
         {
 
@@ -28,7 +28,7 @@ namespace Lemonade_Stand
             Console.WriteLine("*************************************");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Player player = new Player();
+           
             Console.WriteLine($"\nAlright {player.Name1}...here we go...");
             Console.ResetColor();
             Console.WriteLine("You've got 7 days to see if you can make buid a successful Lemonade stand." +

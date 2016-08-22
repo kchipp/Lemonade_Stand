@@ -458,11 +458,19 @@ namespace Lemonade_Stand
             return moneySpent;
         }
 
-        public double ShowProfit()
+            public double ShowProfit()
         {
 
             profit = inventory.money - 15;
-            Console.WriteLine($"Current Total Profit : {profit:C2}");
+            if (profit < 0.00)
+            {
+                Console.WriteLine($"Current Total Profit : -{profit:C2}");
+            }
+            else if (profit > 0.00)
+            {
+                Console.WriteLine($"Current Total Profit : {profit:C2}");
+
+            }
             return profit;
         }
         public void DisplayInventory()

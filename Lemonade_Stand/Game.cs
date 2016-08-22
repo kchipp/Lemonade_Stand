@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     class Game
     {
-        public int numberOfDays = 2;
+        public int numberOfDays = 7;
         public string choice;
         Store store = new Store();
         Customer customer = new Customer();
@@ -44,10 +44,9 @@ namespace Lemonade_Stand
                     store.BuyIce();
                     store.BuyCups();
                     store.BuySugar();
-                    store.ShowMoneySpent();
-                    //store.ShowWeather();
+                    store.ShowMoneySpent();                   
                     store.DisplayInventory();
-                    //Console.Clear();
+                    Console.Clear();
                     Console.WriteLine("Customers will be coming soon...");
                     store.SetPrice();
                     store.SetWillBuyPrice();
@@ -72,7 +71,7 @@ namespace Lemonade_Stand
         {
             Console.Clear();
             Console.WriteLine();
-            Console.WriteLine("The game has ended.  Would you like to try again?  Y/N");
+            Console.WriteLine($"The game has ended.  Your final profit is : {store.profit:C2}. \nWould you like to play for another week?  Y/N");
             choice = Console.ReadLine().ToLower();
             {
                 switch (choice)
